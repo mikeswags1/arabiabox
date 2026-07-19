@@ -383,6 +383,19 @@
     color: var(--gold-bright); opacity: 0.8; margin-bottom: 22px;
   }
   .cta p { color: var(--muted); margin-bottom: 44px; }
+  .cta .price {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(3rem, 7vw, 4.4rem); line-height: 1;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .cta .price sup { font-size: 0.45em; top: -0.9em; }
+  .cta .price-note {
+    color: var(--muted); font-size: 0.82rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 38px;
+  }
+  .cta .phone-line { margin-top: 22px; color: var(--muted); font-size: 0.95rem; }
+  .cta .phone-line a { color: var(--gold); text-decoration: none; font-weight: 600; letter-spacing: 0.04em; }
 
   /* ============ Footer ============ */
   footer {
@@ -641,6 +654,10 @@
     </div>
     <div class="faq-list reveal">
       <details class="faq-item">
+        <summary>How much does it cost?</summary>
+        <div class="faq-body">$200, one time. That includes the box, every channel for life, the one-year warranty and unlimited technical support. You will never be charged again.</div>
+      </details>
+      <details class="faq-item">
         <summary>Do I have to pay a monthly subscription?</summary>
         <div class="faq-body">No. You pay once for the box and that's it — your channels are included for life. There are no monthly fees, renewal charges or hidden costs of any kind.</div>
       </details>
@@ -667,8 +684,11 @@
       <div class="rule"></div>
       <h2>Bring Home <em>Every Arabic Channel</em></h2>
       <div class="arabic">اطلب جهازك اليوم</div>
+      <div class="price"><sup>$</sup>200</div>
+      <div class="price-note">One-Time Payment · Everything Included</div>
       <p>Lifetime channels · One-year warranty · Support all the time</p>
-      <a href="tel:+1234567890" class="btn btn-solid">Call to Order</a>
+      <a href="tel:+19739089618" class="btn btn-solid">Call (973) 908-9618</a>
+      <div class="phone-line">Questions? Call or text <a href="tel:+19739089618">(973) 908-9618</a></div>
     </div>
   </div>
 </section>
@@ -676,7 +696,7 @@
 <footer>
   <div class="foot-inner">
     <div class="foot-logo">Arabia<b>Box</b></div>
-    <p class="foot-tag">Lifetime Arabic Channels · No Subscription · One-Year Warranty</p>
+    <p class="foot-tag">Lifetime Arabic Channels · No Subscription · One-Year Warranty · <a href="tel:+19739089618" style="color: var(--gold); text-decoration: none;">(973) 908-9618</a></p>
     <div class="foot-rule"></div>
     <p class="foot-credit">Website crafted by <a href="https://landmarkdigital.agency" target="_blank" rel="noopener">Landmark Digital</a></p>
   </div>
