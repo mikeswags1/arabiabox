@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArabiaBox — Lifetime Arabic Channels · No Subscription</title>
-<meta name="description" content="The premium Arabic TV box. News, sports, entertainment and religious channels from Lebanon, Syria, Jordan, Palestine and Egypt. Lifetime access, no subscription, 1-year warranty.">
+<title>HorizonBox — Arabic &amp; International TV Boxes</title>
+<meta name="description" content="Choose from three HorizonBox TV systems: an Arabic-focused Android box, a complete Linux world entertainment box, or an Android international channel box.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -396,6 +396,45 @@
   }
   .promise-cell p { color: var(--muted); font-size: 0.88rem; max-width: 260px; margin: 0 auto; }
 
+  /* ============ Box lineup ============ */
+  .boxes { background: var(--bg); }
+  .box-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px; align-items: stretch;
+  }
+  .box-card {
+    position: relative; display: flex; flex-direction: column;
+    border: 1px solid var(--line-soft); background: var(--bg-2);
+    overflow: hidden; transition: transform .35s, border-color .35s, box-shadow .35s;
+  }
+  .box-card:hover {
+    transform: translateY(-7px); border-color: var(--gold-dim);
+    box-shadow: 0 18px 46px rgba(92,72,28,.12);
+  }
+  .box-card.featured { border-color: var(--gold); }
+  .box-ribbon {
+    position: absolute; top: 18px; right: 18px; z-index: 2;
+    padding: 7px 12px; background: var(--gold); color: #fffdf7;
+    font-size: .67rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  }
+  .box-photo { aspect-ratio: 1 / 1; overflow: hidden; background: #f7ead7; }
+  .box-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .box-body { padding: 34px 32px 36px; display: flex; flex-direction: column; flex: 1; }
+  .box-os {
+    color: var(--gold); font-size: .7rem; font-weight: 600;
+    letter-spacing: .24em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .box-card h3 { font-family: 'Marcellus', serif; font-weight: 400; font-size: 1.55rem; }
+  .box-price { font-family: 'Marcellus', serif; color: var(--gold); font-size: 2.6rem; line-height: 1; margin: 18px 0 20px; }
+  .box-price sup { font-size: .45em; vertical-align: top; }
+  .box-price small { font-family: 'Inter', sans-serif; font-size: .27em; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .box-desc { color: var(--muted); font-size: .92rem; margin-bottom: 22px; }
+  .box-list { list-style: none; margin: 0 0 30px; }
+  .box-list li { padding: 9px 0; border-bottom: 1px solid var(--line-soft); color: var(--muted); font-size: .88rem; }
+  .box-list li::before { content: '✓'; color: var(--gold); margin-right: 9px; font-weight: 700; }
+  .box-card .btn { margin-top: auto; text-align: center; padding-left: 18px; padding-right: 18px; }
+  @media (max-width: 940px) { .box-grid { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; } }
+
   /* ============ CTA ============ */
   .cta { text-align: center; }
   .cta-frame {
@@ -474,14 +513,14 @@
 
 <header id="hdr">
   <nav class="nav">
-    <a href="#" class="logo">Arabia<b>Box</b></a>
+    <a href="#" class="logo">Horizon<b>Box</b></a>
     <div class="nav-links">
       <a href="#networks">Networks</a>
       <a href="#countries">Countries</a>
       <a href="#us-entertainment">U.S. Entertainment</a>
       <a href="#experience">Experience</a>
       <a href="#promise">Warranty</a>
-      <a href="#order" class="nav-order">Order Now</a>
+      <a href="#boxes" class="nav-order">Choose a Box</a>
     </div>
   </nav>
 </header>
@@ -489,12 +528,12 @@
 <section class="hero">
   <div class="hero-ornament"></div>
   <div class="hero-inner">
-    <span class="eyebrow">Lifetime Access · No Subscription</span>
-    <h1>The Arab World,<br><em>Yours For Life</em></h1>
+    <span class="eyebrow">Three Boxes · More Ways to Watch</span>
+    <h1>Your World of TV,<br><em>All in One Place</em></h1>
     <div class="arabic">كل القنوات العربية في جهاز واحد</div>
-    <p class="lead">News, sport, entertainment and religious programming from across the Middle East — one elegant device, one payment, yours for life.</p>
+    <p class="lead">Choose an Arabic-focused box or step up to international channels, movies and TV shows with the system that fits your home.</p>
     <div class="hero-ctas">
-      <a href="#order" class="btn btn-solid">Order Your Box</a>
+      <a href="#boxes" class="btn btn-solid">Compare the Boxes</a>
       <a href="#networks" class="btn btn-ghost">Explore Channels</a>
     </div>
     <div class="hero-flags">
@@ -510,8 +549,8 @@
 
 <div class="strip">
   <div class="strip-inner">
-    <span>Lifetime Access</span>
-    <span>No Subscription</span>
+    <span>Three Box Options</span>
+    <span>One-Time &amp; Yearly Plans</span>
     <span>One-Year Warranty</span>
     <span>All U.S. Channels + Movies</span>
     <span>Support, All The Time</span>
@@ -556,8 +595,8 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Channels From Home</span>
       <div class="rule"></div>
-      <h2>Every Country. Every Channel.</h2>
-      <p class="sub">All Arabic channels, from every Arab country — news, drama and entertainment, exactly as you remember them.</p>
+      <h2>Channels From Across the Arab World.</h2>
+      <p class="sub">Explore Arabic news, drama and entertainment from across the region. Exact availability depends on the HorizonBox plan you choose.</p>
     </div>
     <div class="country-grid reveal">
       <div class="country-card">
@@ -607,23 +646,23 @@
       <span class="eyebrow">More Ways to Watch</span>
       <div class="rule"></div>
       <h2>All U.S. Entertainment, Included</h2>
-      <p class="sub">Enjoy U.S. channels, movies and television shows alongside the complete Arabic lineup.</p>
+      <p class="sub">U.S. channels are available with the international boxes. Movies and TV shows are included with the Linux World Box.</p>
     </div>
     <div class="ent-grid reveal">
       <div class="ent-card">
         <div class="ent-icon">&#128250;</div>
         <h3>U.S. Channels</h3>
-        <p>All major U.S. channels, with news, sports, entertainment and family programming.</p>
+        <p>Major U.S. news, sports, entertainment and family channels on the international plans.</p>
       </div>
       <div class="ent-card">
         <div class="ent-icon">&#127916;</div>
         <h3>Movies</h3>
-        <p>A wide movie library with new favorites, classics and films for the whole family.</p>
+        <p>A wide movie library included with the Linux World Box.</p>
       </div>
       <div class="ent-card">
         <div class="ent-icon">&#127871;</div>
         <h3>TV Shows</h3>
-        <p>Popular U.S. series and complete seasons, ready to enjoy whenever you want.</p>
+        <p>Popular series and complete seasons included with the Linux World Box.</p>
       </div>
     </div>
   </div>
@@ -634,27 +673,27 @@
     <div class="sec-head reveal">
       <span class="eyebrow">The Experience</span>
       <div class="rule"></div>
-      <h2>One Payment. A Lifetime of Television.</h2>
+      <h2>A Box for Every Kind of Viewer.</h2>
     </div>
     <div class="exp-grid reveal">
       <div class="exp-item">
         <span class="num">01</span>
-        <h3>Lifetime Access</h3>
-        <p>Pay once and enjoy your channels for life. No renewals, no expiring plans, no surprises.</p>
+        <h3>Arabic-Focused Choice</h3>
+        <p>The $200 Android Arabic Box is a one-time purchase with an Arabic-focused lineup and selected English channels.</p>
       </div>
       <div class="exp-item">
         <span class="num">02</span>
-        <h3>No Subscription</h3>
-        <p>Zero monthly fees — unlike cable or streaming services. Your box, your channels, forever.</p>
+        <h3>International Choices</h3>
+        <p>Choose Linux or Android for broader Arabic, English and international live-channel access on an annual plan.</p>
       </div>
       <div class="exp-item">
         <span class="num">03</span>
-        <h3>One-Year Warranty</h3>
+        <h3>Hardware Warranty</h3>
         <p>Every device is covered by a full twelve-month warranty. If anything goes wrong, we take care of it.</p>
       </div>
       <div class="exp-item">
         <span class="num">04</span>
-        <h3>Support, All The Time</h3>
+        <h3>Helpful Support</h3>
         <p>Our technical team is available whenever you need help — setup, questions or troubleshooting.</p>
       </div>
     </div>
@@ -683,7 +722,7 @@
       <div class="step">
         <div class="s-circle">III</div>
         <h3>Watch</h3>
-        <p>Every channel is ready and waiting — enjoy, for life.</p>
+        <p>Your selected channel package is ready and waiting.</p>
       </div>
     </div>
   </div>
@@ -703,9 +742,9 @@
         <p>Complete hardware coverage for twelve months from the day of purchase.</p>
       </div>
       <div class="promise-cell">
-        <div class="p-num">∞</div>
-        <h3>Lifetime Channels</h3>
-        <p>One payment. No subscription, no renewals — your channels for life.</p>
+        <div class="p-num">3</div>
+        <h3>Box Options</h3>
+        <p>One Arabic-focused one-time option and two international annual plans.</p>
       </div>
       <div class="promise-cell">
         <div class="p-num">24<span style="font-size:1.2rem">/7</span></div>
@@ -726,15 +765,15 @@
     <div class="faq-list reveal">
       <details class="faq-item">
         <summary>How much does it cost?</summary>
-        <div class="faq-body">$200, one time. That includes the box, every channel for life, the one-year warranty and unlimited technical support. You will never be charged again.</div>
+        <div class="faq-body">The Android Arabic Box is a $200 one-time purchase. The Linux World Box is $230 per year, and the Android Channel Box is $175 per year. Every option includes hardware support.</div>
       </details>
       <details class="faq-item">
-        <summary>Do I have to pay a monthly subscription?</summary>
-        <div class="faq-body">No. You pay once for the box and that's it — your channels are included for life. There are no monthly fees, renewal charges or hidden costs of any kind.</div>
+        <summary>Which boxes require a subscription?</summary>
+        <div class="faq-body">The $200 Android Arabic Box is a one-time purchase with no annual renewal. The $230 Linux World Box and $175 Android Channel Box are yearly subscriptions.</div>
       </details>
       <details class="faq-item">
         <summary>Which channels are included?</summary>
-        <div class="faq-body">All Arabic channels — leading news networks including Al Jazeera, Al Hadath and Al Arabiya, beIN Sports coverage, full lineups from Lebanon, Syria, Jordan, Palestine, Egypt and every other Arab country, plus dedicated religious programming — both Islamic and Christian channels.</div>
+        <div class="faq-body">The lineup depends on the box. The $200 Android Arabic Box focuses on Arabic channels with selected English channels. The $230 Linux World Box adds Arabic and English channels, channels from all countries, movies and TV shows. The $175 Android Channel Box provides the broad live-channel system on Android.</div>
       </details>
       <details class="faq-item">
         <summary>What does the warranty cover?</summary>
@@ -748,16 +787,80 @@
   </div>
 </section>
 
+<section class="boxes" id="boxes">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Choose Your Experience</span>
+      <div class="rule"></div>
+      <h2>Three Boxes. One Perfect Fit.</h2>
+      <p class="sub">Choose the operating system and channel lineup that fits how your family watches.</p>
+    </div>
+    <div class="box-grid reveal">
+      <article class="box-card">
+        <div class="box-photo"><img src="assets/android-arabic-box.png" alt="Premium Android Arabic TV box and remote" loading="lazy"></div>
+        <div class="box-body">
+          <div class="box-os">Android OS</div>
+          <h3>Arabic Box</h3>
+          <div class="box-price"><sup>$</sup>200 <small>one time</small></div>
+          <p class="box-desc">Built specifically for Arabic television, with a focused lineup and an easy Android experience.</p>
+          <ul class="box-list">
+            <li>Arabic-focused channel lineup</li>
+            <li>Selected English channels</li>
+            <li>Android apps and interface</li>
+            <li>Best for Arabic-first viewing</li>
+          </ul>
+          <a href="tel:+19739089618" class="btn btn-ghost">Ask Azmi About This Box</a>
+        </div>
+      </article>
+
+      <article class="box-card featured">
+        <div class="box-ribbon">Most Complete</div>
+        <div class="box-photo"><img src="assets/linux-world-box.png" alt="Premium Linux international TV receiver and remote" loading="lazy"></div>
+        <div class="box-body">
+          <div class="box-os">Linux OS</div>
+          <h3>World Box</h3>
+          <div class="box-price"><sup>$</sup>230 <small>per year</small></div>
+          <p class="box-desc">The complete entertainment package for viewers who want live television and on-demand favorites from around the world.</p>
+          <ul class="box-list">
+            <li>Arabic and English channels</li>
+            <li>Channels from all countries</li>
+            <li>Movies and TV shows</li>
+            <li>Stable, dedicated Linux system</li>
+          </ul>
+          <a href="tel:+19739089618" class="btn btn-solid">Ask Azmi About This Box</a>
+        </div>
+      </article>
+
+      <article class="box-card">
+        <div class="box-photo"><img src="assets/android-channel-box.png" alt="Compact Android international channel box and remote" loading="lazy"></div>
+        <div class="box-body">
+          <div class="box-os">Android OS</div>
+          <h3>Android Channel Box</h3>
+          <div class="box-price"><sup>$</sup>175 <small>per year</small></div>
+          <p class="box-desc">A value-priced Android option with the broad live-channel system in a familiar, flexible interface.</p>
+          <ul class="box-list">
+            <li>Arabic and English channels</li>
+            <li>International live channels</li>
+            <li>Android apps and interface</li>
+            <li>Best-value channel package</li>
+          </ul>
+          <a href="tel:+19739089618" class="btn btn-ghost">Ask Azmi About This Box</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="order">
   <div class="container">
     <div class="cta-frame reveal">
       <span class="eyebrow">Reserve Yours</span>
       <div class="rule"></div>
-      <h2>Bring Home <em>Every Arabic Channel</em></h2>
+      <h2>Find the <em>Right Box</em> for Your Family</h2>
       <div class="arabic">اطلب جهازك اليوم</div>
-      <div class="price"><sup>$</sup>200</div>
-      <div class="price-note">One-Time Payment · Everything Included</div>
-      <p>Lifetime channels · One-year warranty · Support all the time</p>
+      <div class="price"><sup>$</sup>175</div>
+      <div class="price-note">Yearly Plans From $175 · One-Time Option $200</div>
+      <p>Three HorizonBox options · Clear pricing · Support from Azmi</p>
       <a href="tel:+19739089618" class="btn btn-solid">Call Azmi: (973) 908-9618</a>
       <div class="phone-line">Questions? Call or text Azmi at <a href="tel:+19739089618">(973) 908-9618</a></div>
     </div>
@@ -766,8 +869,8 @@
 
 <footer>
   <div class="foot-inner">
-    <div class="foot-logo">Arabia<b>Box</b></div>
-    <p class="foot-tag">Lifetime Arabic Channels · No Subscription · One-Year Warranty · Azmi: <a href="tel:+19739089618" style="color: var(--gold); text-decoration: none;">(973) 908-9618</a></p>
+    <div class="foot-logo">Horizon<b>Box</b></div>
+    <p class="foot-tag">Arabic · English · International Entertainment · Azmi: <a href="tel:+19739089618" style="color: var(--gold); text-decoration: none;">(973) 908-9618</a></p>
     <div class="foot-rule"></div>
     <p class="foot-credit">Website crafted by <a href="https://landmarkdigital.agency" target="_blank" rel="noopener">Landmark Digital</a></p>
   </div>
