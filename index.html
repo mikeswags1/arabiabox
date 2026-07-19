@@ -10,23 +10,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0b10;
-    --bg-2: #0e1016;
-    --bg-3: #13151d;
-    --line: rgba(201, 169, 98, 0.18);
-    --line-soft: rgba(255, 255, 255, 0.07);
-    --gold: #c9a962;
-    --gold-bright: #e3c98d;
-    --gold-dim: #8a743f;
-    --ivory: #f5f1e8;
-    --muted: #9aa0ad;
-    --muted-2: #6b7280;
+    --bg: #fdfcf9;
+    --bg-2: #f7f3ea;
+    --bg-3: #f1ebdd;
+    --line: rgba(176, 141, 63, 0.30);
+    --line-soft: rgba(30, 25, 15, 0.10);
+    --gold: #a8842f;
+    --gold-bright: #8a6b22;
+    --gold-dim: #c9ab6a;
+    --ivory: #211c12;
+    --muted: #6d6353;
+    --muted-2: #988d79;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     background: var(--bg);
     color: var(--ivory);
     line-height: 1.7;
@@ -53,7 +53,7 @@
     border-bottom: 1px solid transparent;
   }
   header.scrolled {
-    background: rgba(10, 11, 16, 0.88);
+    background: rgba(253, 252, 249, 0.92);
     backdrop-filter: blur(14px);
     border-bottom-color: var(--line);
   }
@@ -83,7 +83,7 @@
     padding: 11px 26px;
     transition: background .25s, color .25s !important;
   }
-  .nav-order:hover { background: var(--gold); color: var(--bg) !important; }
+  .nav-order:hover { background: var(--gold); color: #fffdf7 !important; }
   @media (max-width: 860px) { .nav-links a:not(.nav-order) { display: none; } }
 
   /* ============ Hero ============ */
@@ -142,12 +142,13 @@
     transition: background .3s, color .3s, border-color .3s, transform .3s;
   }
   .btn-solid {
-    background: var(--gold); color: var(--bg);
+    background: var(--gold); color: #fffdf7;
     border: 1px solid var(--gold);
+    box-shadow: 0 10px 26px rgba(168,132,47,0.25);
   }
   .btn-solid:hover { background: var(--gold-bright); border-color: var(--gold-bright); transform: translateY(-2px); }
   .btn-ghost {
-    color: var(--ivory); border: 1px solid rgba(255,255,255,0.22);
+    color: var(--ivory); border: 1px solid rgba(30,25,15,0.25);
   }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold-bright); }
 
@@ -165,7 +166,7 @@
   .hero-flags .fchip:last-child { border-right: none; }
   .hero-flags .fchip .fimg {
     width: 26px; height: auto; border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
   }
 
   /* ============ Marquee strip ============ */
@@ -242,7 +243,7 @@
   .country-card .cf { line-height: 1; display: block; margin-bottom: 22px; font-size: 2.9rem; }
   .country-card .cfimg {
     width: 64px; height: auto; border-radius: 3px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.55);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18);
   }
   .country-card h3 {
     font-family: 'Marcellus', serif; font-weight: 400;
