@@ -258,7 +258,21 @@
   .country-card:hover .cline { opacity: 1; }
 
   /* ============ U.S. Entertainment ============ */
-  .us-entertainment { background: var(--bg); }
+  .us-entertainment {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(168,132,47,0.16), transparent 42%),
+      var(--bg-2);
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .us-badge {
+    width: fit-content; margin: 0 auto 24px; padding: 10px 18px;
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid var(--gold-dim); background: var(--bg);
+    color: var(--gold-bright); font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .us-badge img { width: 32px; border-radius: 2px; box-shadow: 0 1px 5px rgba(0,0,0,.18); }
   .ent-grid {
     display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1px; background: var(--line-soft);
@@ -270,10 +284,10 @@
   }
   .ent-card:hover { background: var(--bg-3); transform: translateY(-4px); }
   .ent-icon {
-    width: 64px; height: 64px; margin: 0 auto 24px;
+    width: 76px; height: 76px; margin: 0 auto 24px;
     border: 1px solid var(--gold-dim); border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: var(--gold); font-size: 1.45rem;
+    color: var(--gold); font-size: 2rem; background: var(--bg);
   }
   .ent-card h3 {
     font-family: 'Marcellus', serif; font-weight: 400;
@@ -489,6 +503,7 @@
       <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/jo.png" srcset="https://flagcdn.com/w80/jo.png 2x" alt=""> Jordan</div>
       <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/ps.png" srcset="https://flagcdn.com/w80/ps.png 2x" alt=""> Palestine</div>
       <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/eg.png" srcset="https://flagcdn.com/w80/eg.png 2x" alt=""> Egypt</div>
+      <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/us.png" srcset="https://flagcdn.com/w80/us.png 2x" alt=""> United States</div>
     </div>
   </div>
 </section>
@@ -498,6 +513,7 @@
     <span>Lifetime Access</span>
     <span>No Subscription</span>
     <span>One-Year Warranty</span>
+    <span>All U.S. Channels + Movies</span>
     <span>Support, All The Time</span>
   </div>
 </div>
@@ -587,6 +603,7 @@
 <section class="us-entertainment" id="us-entertainment">
   <div class="container">
     <div class="sec-head reveal">
+      <div class="us-badge"><img src="https://flagcdn.com/w80/us.png" alt="United States flag"> U.S. Entertainment Included</div>
       <span class="eyebrow">More Ways to Watch</span>
       <div class="rule"></div>
       <h2>All U.S. Entertainment, Included</h2>
@@ -594,17 +611,17 @@
     </div>
     <div class="ent-grid reveal">
       <div class="ent-card">
-        <div class="ent-icon">TV</div>
+        <div class="ent-icon">&#128250;</div>
         <h3>U.S. Channels</h3>
         <p>All major U.S. channels, with news, sports, entertainment and family programming.</p>
       </div>
       <div class="ent-card">
-        <div class="ent-icon">&#9654;</div>
+        <div class="ent-icon">&#127916;</div>
         <h3>Movies</h3>
         <p>A wide movie library with new favorites, classics and films for the whole family.</p>
       </div>
       <div class="ent-card">
-        <div class="ent-icon">&#9733;</div>
+        <div class="ent-icon">&#127871;</div>
         <h3>TV Shows</h3>
         <p>Popular U.S. series and complete seasons, ready to enjoy whenever you want.</p>
       </div>
