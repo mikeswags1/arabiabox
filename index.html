@@ -278,6 +278,56 @@
   }
   .exp-item p { color: var(--muted); font-size: 0.92rem; }
 
+  /* ============ Setup steps ============ */
+  .setup { border-top: 1px solid var(--line-soft); }
+  .steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 48px; max-width: 1000px; margin: 0 auto;
+  }
+  .step { text-align: center; position: relative; }
+  .step .s-circle {
+    width: 86px; height: 86px; margin: 0 auto 26px;
+    border: 1px solid var(--gold-dim); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Marcellus', serif; font-size: 1.5rem; color: var(--gold);
+    position: relative;
+  }
+  .step .s-circle::after {
+    content: ''; position: absolute; inset: 8px;
+    border: 1px solid rgba(201,169,98,0.15); border-radius: 50%;
+  }
+  .step h3 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: 1.15rem; letter-spacing: 0.06em; margin-bottom: 10px;
+  }
+  .step p { color: var(--muted); font-size: 0.9rem; max-width: 250px; margin: 0 auto; }
+
+  /* ============ FAQ ============ */
+  .faq-list { max-width: 760px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .faq-item:first-child { border-top: 1px solid var(--line-soft); }
+  .faq-item summary {
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 8px;
+    font-family: 'Marcellus', serif; font-size: 1.08rem;
+    letter-spacing: 0.03em; color: var(--ivory);
+    transition: color .25s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-family: 'Inter', sans-serif; font-weight: 300;
+    font-size: 1.4rem; color: var(--gold); transition: transform .3s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item summary:hover { color: var(--gold-bright); }
+  .faq-item .faq-body {
+    padding: 0 8px 28px; color: var(--muted); font-size: 0.94rem;
+    max-width: 640px;
+  }
+
   /* ============ Guarantee ============ */
   .promise {
     background: var(--bg-2);
@@ -526,6 +576,34 @@
   </div>
 </section>
 
+<section class="setup" id="setup">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Effortless Setup</span>
+      <div class="rule"></div>
+      <h2>Watching in Minutes</h2>
+      <p class="sub">No technician, no installation appointment. Three simple steps and you're home.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="s-circle">I</div>
+        <h3>Plug In</h3>
+        <p>Connect the box to your TV with the included HDMI cable.</p>
+      </div>
+      <div class="step">
+        <div class="s-circle">II</div>
+        <h3>Connect</h3>
+        <p>Join your home Wi-Fi network in a few taps of the remote.</p>
+      </div>
+      <div class="step">
+        <div class="s-circle">III</div>
+        <h3>Watch</h3>
+        <p>Every channel is ready and waiting — enjoy, for life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="promise" id="promise">
   <div class="container">
     <div class="sec-head reveal">
@@ -549,6 +627,34 @@
         <h3>Technical Support</h3>
         <p>Help is always available — all the time, whenever you need it.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Common Questions</span>
+      <div class="rule"></div>
+      <h2>Everything You Need to Know</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Do I have to pay a monthly subscription?</summary>
+        <div class="faq-body">No. You pay once for the box and that's it — your channels are included for life. There are no monthly fees, renewal charges or hidden costs of any kind.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Which channels are included?</summary>
+        <div class="faq-body">Leading Arabic news networks including Al Jazeera, Al Hadath and Al Arabiya, beIN Sports coverage, full channel lineups from Lebanon, Syria, Jordan, Palestine and Egypt, plus dedicated religious programming.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What does the warranty cover?</summary>
+        <div class="faq-body">Every box comes with a full one-year warranty covering the hardware. If anything goes wrong with your device in the first twelve months, we take care of it.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I need help setting it up?</summary>
+        <div class="faq-body">Our technical support is available all the time. Whether it's first-time setup, connecting to Wi-Fi, or any question down the road — just reach out and we'll walk you through it.</div>
+      </details>
     </div>
   </div>
 </section>
