@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArabiaBox — Lifetime Arabic Channels · No Subscription</title>
+<meta name="description" content="The premium Arabic TV box. News, sports, entertainment and religious channels from Lebanon, Syria, Jordan, Palestine and Egypt. Lifetime access, no subscription, 1-year warranty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0b10;
+    --bg-2: #0e1016;
+    --bg-3: #13151d;
+    --line: rgba(201, 169, 98, 0.18);
+    --line-soft: rgba(255, 255, 255, 0.07);
+    --gold: #c9a962;
+    --gold-bright: #e3c98d;
+    --gold-dim: #8a743f;
+    --ivory: #f5f1e8;
+    --muted: #9aa0ad;
+    --muted-2: #6b7280;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background: var(--bg);
+    color: var(--ivory);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(201,169,98,0.3); }
+
+  .serif { font-family: 'Marcellus', serif; }
+  .eyebrow {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .rule {
+    width: 56px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 22px auto;
+  }
+
+  /* ============ Header ============ */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    transition: background .35s, border-color .35s;
+    border-bottom: 1px solid transparent;
+  }
+  header.scrolled {
+    background: rgba(10, 11, 16, 0.88);
+    backdrop-filter: blur(14px);
+    border-bottom-color: var(--line);
+  }
+  .nav {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 26px 40px;
+  }
+  .logo {
+    font-family: 'Marcellus', serif;
+    font-size: 1.3rem; letter-spacing: 0.12em;
+    color: var(--ivory); text-decoration: none;
+    display: flex; align-items: baseline; gap: 2px;
+  }
+  .logo b { color: var(--gold); font-weight: 400; }
+  .nav-links { display: flex; gap: 42px; align-items: center; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.78rem; font-weight: 400;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--gold-bright); }
+  .nav-order {
+    color: var(--gold) !important;
+    border: 1px solid var(--gold-dim);
+    padding: 11px 26px;
+    transition: background .25s, color .25s !important;
+  }
+  .nav-order:hover { background: var(--gold); color: var(--bg) !important; }
+  @media (max-width: 860px) { .nav-links a:not(.nav-order) { display: none; } }
+
+  /* ============ Hero ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative; overflow: hidden;
+    padding: 140px 24px 100px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 1000px 600px at 50% -20%, rgba(201,169,98,0.10), transparent 65%),
+      radial-gradient(ellipse 800px 500px at 50% 115%, rgba(201,169,98,0.06), transparent 65%);
+  }
+  .hero-ornament {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(760px, 92vw); height: min(760px, 92vw);
+    border: 1px solid rgba(201,169,98,0.09);
+    border-radius: 50%; pointer-events: none;
+  }
+  .hero-ornament::before {
+    content: '';
+    position: absolute; inset: 42px;
+    border: 1px solid rgba(201,169,98,0.06);
+    border-radius: 50%;
+  }
+  .hero-inner { position: relative; max-width: 900px; }
+  .hero .eyebrow { display: block; margin-bottom: 26px; }
+  .hero h1 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: clamp(2.6rem, 6.5vw, 5rem);
+    line-height: 1.12; letter-spacing: 0.01em;
+    margin-bottom: 18px;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero .arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    color: var(--gold-bright); opacity: 0.85;
+    margin-bottom: 30px;
+  }
+  .hero p.lead {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 580px; margin: 0 auto 46px;
+    font-weight: 300;
+  }
+  .hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 70px; }
+  .btn {
+    display: inline-block; text-decoration: none;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    padding: 18px 44px;
+    transition: background .3s, color .3s, border-color .3s, transform .3s;
+  }
+  .btn-solid {
+    background: var(--gold); color: var(--bg);
+    border: 1px solid var(--gold);
+  }
+  .btn-solid:hover { background: var(--gold-bright); border-color: var(--gold-bright); transform: translateY(-2px); }
+  .btn-ghost {
+    color: var(--ivory); border: 1px solid rgba(255,255,255,0.22);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-bright); }
+
+  .hero-flags {
+    display: flex; justify-content: center; align-items: center;
+    gap: 0; flex-wrap: wrap;
+  }
+  .hero-flags .fchip {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 26px;
+    border-right: 1px solid var(--line-soft);
+    font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .hero-flags .fchip:last-child { border-right: none; }
+  .hero-flags .fchip .fimg {
+    width: 26px; height: auto; border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  /* ============ Marquee strip ============ */
+  .strip {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+    padding: 22px 24px;
+  }
+  .strip-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+  }
+  .strip-inner span {
+    font-size: 0.74rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); padding: 4px 34px;
+    border-right: 1px solid var(--line);
+  }
+  .strip-inner span:last-child { border-right: none; }
+  @media (max-width: 720px) {
+    .strip-inner span { border-right: none; padding: 6px 12px; }
+  }
+
+  /* ============ Sections ============ */
+  section { padding: 130px 40px; position: relative; }
+  @media (max-width: 720px) { section { padding: 90px 24px; } }
+  .container { max-width: 1240px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 80px; }
+  .sec-head h2 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1.2;
+  }
+  .sec-head p.sub {
+    color: var(--muted); max-width: 560px; margin: 18px auto 0;
+    font-size: 1rem;
+  }
+
+  /* ============ Networks ============ */
+  .net-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px; background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+  }
+  .net-card {
+    background: var(--bg);
+    padding: 60px 40px; text-align: center;
+    transition: background .35s;
+  }
+  .net-card:hover { background: var(--bg-3); }
+  .net-card .n-mark {
+    font-family: 'Marcellus', serif;
+    font-size: 2rem; color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .net-card h3 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: 1.25rem; letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+  .net-card p { color: var(--muted); font-size: 0.9rem; }
+
+  /* ============ Countries ============ */
+  .countries { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .country-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 28px;
+  }
+  .country-card {
+    text-align: center; padding: 54px 24px;
+    border: 1px solid var(--line-soft);
+    background: var(--bg);
+    transition: border-color .35s, transform .35s;
+  }
+  .country-card:hover { border-color: var(--gold-dim); transform: translateY(-6px); }
+  .country-card .cf { line-height: 1; display: block; margin-bottom: 22px; font-size: 2.9rem; }
+  .country-card .cfimg {
+    width: 64px; height: auto; border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.55);
+  }
+  .country-card h3 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .country-card p { color: var(--muted-2); font-size: 0.82rem; letter-spacing: 0.04em; }
+  .country-card .cline {
+    width: 28px; height: 1px; background: var(--gold-dim);
+    margin: 16px auto 0; opacity: 0; transition: opacity .35s;
+  }
+  .country-card:hover .cline { opacity: 1; }
+
+  /* ============ Experience / features ============ */
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px 48px; margin-top: 20px;
+  }
+  .exp-item { text-align: left; }
+  .exp-item .num {
+    font-family: 'Marcellus', serif;
+    font-size: 0.9rem; color: var(--gold);
+    letter-spacing: 0.2em; display: block; margin-bottom: 18px;
+  }
+  .exp-item .num::after {
+    content: ''; display: block;
+    width: 100%; height: 1px; margin-top: 18px;
+    background: linear-gradient(90deg, var(--gold-dim), transparent);
+  }
+  .exp-item h3 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: 1.3rem; margin-bottom: 12px;
+  }
+  .exp-item p { color: var(--muted); font-size: 0.92rem; }
+
+  /* ============ Guarantee ============ */
+  .promise {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .promise-grid {
+    display: flex; justify-content: center; gap: 1px;
+    background: var(--line-soft); border: 1px solid var(--line-soft);
+    max-width: 1000px; margin: 0 auto; flex-wrap: wrap;
+  }
+  .promise-cell {
+    flex: 1 1 300px; background: var(--bg-2);
+    padding: 64px 36px;
+  }
+  .promise-cell .p-num {
+    font-family: 'Marcellus', serif;
+    font-size: 2.6rem; color: var(--gold); line-height: 1;
+    margin-bottom: 14px;
+  }
+  .promise-cell h3 {
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    margin-bottom: 12px; color: var(--ivory);
+  }
+  .promise-cell p { color: var(--muted); font-size: 0.88rem; max-width: 260px; margin: 0 auto; }
+
+  /* ============ CTA ============ */
+  .cta { text-align: center; }
+  .cta-frame {
+    max-width: 880px; margin: 0 auto;
+    border: 1px solid var(--line);
+    padding: 100px 48px; position: relative;
+    background:
+      radial-gradient(ellipse 600px 300px at 50% 120%, rgba(201,169,98,0.08), transparent 70%);
+  }
+  .cta-frame::before, .cta-frame::after {
+    content: ''; position: absolute; width: 22px; height: 22px;
+    border-color: var(--gold); border-style: solid;
+  }
+  .cta-frame::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  .cta-frame::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+  .cta h2 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .cta h2 em { font-style: normal; color: var(--gold); }
+  .cta .arabic {
+    font-family: 'Amiri', serif; font-size: 1.35rem;
+    color: var(--gold-bright); opacity: 0.8; margin-bottom: 22px;
+  }
+  .cta p { color: var(--muted); margin-bottom: 44px; }
+
+  /* ============ Footer ============ */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 60px 40px 44px;
+  }
+  .foot-inner {
+    max-width: 1240px; margin: 0 auto; text-align: center;
+  }
+  .foot-logo {
+    font-family: 'Marcellus', serif; font-size: 1.2rem;
+    letter-spacing: 0.12em; margin-bottom: 14px;
+  }
+  .foot-logo b { color: var(--gold); font-weight: 400; }
+  .foot-tag {
+    color: var(--muted-2); font-size: 0.78rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 38px;
+  }
+  .foot-rule {
+    width: 100%; height: 1px; background: var(--line-soft);
+    margin-bottom: 26px;
+  }
+  .foot-credit { color: var(--muted-2); font-size: 0.8rem; }
+  .foot-credit a {
+    color: var(--gold); text-decoration: none;
+    letter-spacing: 0.06em; transition: color .25s;
+  }
+  .foot-credit a:hover { color: var(--gold-bright); }
+
+  /* ============ Reveal animation (only when JS is running) ============ */
+  html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+  html.js .reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <nav class="nav">
+    <a href="#" class="logo">Arabia<b>Box</b></a>
+    <div class="nav-links">
+      <a href="#networks">Networks</a>
+      <a href="#countries">Countries</a>
+      <a href="#experience">Experience</a>
+      <a href="#promise">Warranty</a>
+      <a href="#order" class="nav-order">Order Now</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-ornament"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Lifetime Access · No Subscription</span>
+    <h1>The Arab World,<br><em>Yours For Life</em></h1>
+    <div class="arabic">كل القنوات العربية في جهاز واحد</div>
+    <p class="lead">News, sport, entertainment and religious programming from across the Middle East — one elegant device, one payment, yours for life.</p>
+    <div class="hero-ctas">
+      <a href="#order" class="btn btn-solid">Order Your Box</a>
+      <a href="#networks" class="btn btn-ghost">Explore Channels</a>
+    </div>
+    <div class="hero-flags">
+      <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/lb.png" srcset="https://flagcdn.com/w80/lb.png 2x" alt=""> Lebanon</div>
+      <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/sy.png" srcset="https://flagcdn.com/w80/sy.png 2x" alt=""> Syria</div>
+      <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/jo.png" srcset="https://flagcdn.com/w80/jo.png 2x" alt=""> Jordan</div>
+      <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/ps.png" srcset="https://flagcdn.com/w80/ps.png 2x" alt=""> Palestine</div>
+      <div class="fchip"><img class="fimg" src="https://flagcdn.com/w40/eg.png" srcset="https://flagcdn.com/w80/eg.png 2x" alt=""> Egypt</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <span>Lifetime Access</span>
+    <span>No Subscription</span>
+    <span>One-Year Warranty</span>
+    <span>Support, All The Time</span>
+  </div>
+</div>
+
+<section id="networks">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Lineup</span>
+      <div class="rule"></div>
+      <h2>Premier News &amp; Sport Networks</h2>
+      <p class="sub">The region's most trusted voices and its biggest matches — always on, always in reach.</p>
+    </div>
+    <div class="net-grid reveal">
+      <div class="net-card">
+        <div class="n-mark">الجزيرة</div>
+        <h3>Al Jazeera</h3>
+        <p>The Arab world's leading news network, live around the clock.</p>
+      </div>
+      <div class="net-card">
+        <div class="n-mark">الحدث</div>
+        <h3>Al Hadath</h3>
+        <p>Continuous coverage of the events shaping the region.</p>
+      </div>
+      <div class="net-card">
+        <div class="n-mark">العربية</div>
+        <h3>Al Arabiya</h3>
+        <p>Trusted reporting and analysis from across the Middle East.</p>
+      </div>
+      <div class="net-card">
+        <div class="n-mark">⚽</div>
+        <h3>beIN Sports</h3>
+        <p>The football and sport coverage the whole region watches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="countries" id="countries">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Channels From Home</span>
+      <div class="rule"></div>
+      <h2>Every Country. Every Channel.</h2>
+      <p class="sub">Complete channel lineups from home — news, drama and entertainment, exactly as you remember them.</p>
+    </div>
+    <div class="country-grid reveal">
+      <div class="country-card">
+        <span class="cf"><img class="cfimg" src="https://flagcdn.com/w80/lb.png" srcset="https://flagcdn.com/w160/lb.png 2x" alt=""></span>
+        <h3>Lebanon</h3>
+        <p>All major Lebanese channels</p>
+        <div class="cline"></div>
+      </div>
+      <div class="country-card">
+        <span class="cf"><img class="cfimg" src="https://flagcdn.com/w80/sy.png" srcset="https://flagcdn.com/w160/sy.png 2x" alt=""></span>
+        <h3>Syria</h3>
+        <p>All major Syrian channels</p>
+        <div class="cline"></div>
+      </div>
+      <div class="country-card">
+        <span class="cf"><img class="cfimg" src="https://flagcdn.com/w80/jo.png" srcset="https://flagcdn.com/w160/jo.png 2x" alt=""></span>
+        <h3>Jordan</h3>
+        <p>All major Jordanian channels</p>
+        <div class="cline"></div>
+      </div>
+      <div class="country-card">
+        <span class="cf"><img class="cfimg" src="https://flagcdn.com/w80/ps.png" srcset="https://flagcdn.com/w160/ps.png 2x" alt=""></span>
+        <h3>Palestine</h3>
+        <p>All major Palestinian channels</p>
+        <div class="cline"></div>
+      </div>
+      <div class="country-card">
+        <span class="cf"><img class="cfimg" src="https://flagcdn.com/w80/eg.png" srcset="https://flagcdn.com/w160/eg.png 2x" alt=""></span>
+        <h3>Egypt</h3>
+        <p>All major Egyptian channels</p>
+        <div class="cline"></div>
+      </div>
+      <div class="country-card">
+        <span class="cf">🕌</span>
+        <h3>Religious</h3>
+        <p>Dedicated religious programming</p>
+        <div class="cline"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Experience</span>
+      <div class="rule"></div>
+      <h2>One Payment. A Lifetime of Television.</h2>
+    </div>
+    <div class="exp-grid reveal">
+      <div class="exp-item">
+        <span class="num">01</span>
+        <h3>Lifetime Access</h3>
+        <p>Pay once and enjoy your channels for life. No renewals, no expiring plans, no surprises.</p>
+      </div>
+      <div class="exp-item">
+        <span class="num">02</span>
+        <h3>No Subscription</h3>
+        <p>Zero monthly fees — unlike cable or streaming services. Your box, your channels, forever.</p>
+      </div>
+      <div class="exp-item">
+        <span class="num">03</span>
+        <h3>One-Year Warranty</h3>
+        <p>Every device is covered by a full twelve-month warranty. If anything goes wrong, we take care of it.</p>
+      </div>
+      <div class="exp-item">
+        <span class="num">04</span>
+        <h3>Support, All The Time</h3>
+        <p>Our technical team is available whenever you need help — setup, questions or troubleshooting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promise" id="promise">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our Promise</span>
+      <div class="rule"></div>
+      <h2>Buy With Complete Confidence</h2>
+    </div>
+    <div class="promise-grid reveal">
+      <div class="promise-cell">
+        <div class="p-num">1<span style="font-size:1.2rem"> yr</span></div>
+        <h3>Full Warranty</h3>
+        <p>Complete hardware coverage for twelve months from the day of purchase.</p>
+      </div>
+      <div class="promise-cell">
+        <div class="p-num">∞</div>
+        <h3>Lifetime Channels</h3>
+        <p>One payment. No subscription, no renewals — your channels for life.</p>
+      </div>
+      <div class="promise-cell">
+        <div class="p-num">24<span style="font-size:1.2rem">/7</span></div>
+        <h3>Technical Support</h3>
+        <p>Help is always available — all the time, whenever you need it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="order">
+  <div class="container">
+    <div class="cta-frame reveal">
+      <span class="eyebrow">Reserve Yours</span>
+      <div class="rule"></div>
+      <h2>Bring Home <em>Every Arabic Channel</em></h2>
+      <div class="arabic">اطلب جهازك اليوم</div>
+      <p>Lifetime channels · One-year warranty · Support all the time</p>
+      <a href="tel:+1234567890" class="btn btn-solid">Call to Order</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo">Arabia<b>Box</b></div>
+    <p class="foot-tag">Lifetime Arabic Channels · No Subscription · One-Year Warranty</p>
+    <div class="foot-rule"></div>
+    <p class="foot-credit">Website crafted by <a href="https://landmarkdigital.agency" target="_blank" rel="noopener">Landmark Digital</a></p>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40), { passive: true });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
