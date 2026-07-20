@@ -433,9 +433,15 @@
     letter-spacing: .24em; text-transform: uppercase; margin-bottom: 10px;
   }
   .box-card h3 { font-family: 'Marcellus', serif; font-weight: 400; font-size: 1.55rem; }
-  .box-price { font-family: 'Marcellus', serif; color: var(--gold); font-size: 2.6rem; line-height: 1; margin: 18px 0 20px; }
+  .box-price { font-family: 'Marcellus', serif; color: var(--gold); font-size: 2.6rem; line-height: 1; margin: 18px 0 14px; }
   .box-price sup { font-size: .45em; vertical-align: top; }
-  .box-price small { font-family: 'Inter', sans-serif; font-size: .27em; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .box-price small { display: block; margin-top: 9px; font-family: 'Inter', sans-serif; font-size: .27em; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text); }
+  .payment-terms {
+    margin-bottom: 20px; padding: 13px 15px; border: 1px solid var(--line);
+    background: rgba(168,132,47,.09); color: var(--text); font-size: .78rem;
+    letter-spacing: .04em; line-height: 1.45;
+  }
+  .payment-terms strong { display: block; color: var(--gold-bright); font-size: .88rem; text-transform: uppercase; letter-spacing: .08em; }
   .box-desc { color: var(--muted); font-size: .92rem; margin-bottom: 22px; }
   .box-list { list-style: none; margin: 0 0 30px; }
   .box-list li { padding: 9px 0; border-bottom: 1px solid var(--line-soft); color: var(--muted); font-size: .88rem; }
@@ -808,7 +814,8 @@
         <div class="box-body">
           <div class="box-os">Android OS</div>
           <h3>Arabic Box</h3>
-          <div class="box-price"><sup>$</sup>200 <small>one time</small></div>
+          <div class="box-price"><sup>$</sup>200 <small>One-Time Payment</small></div>
+          <div class="payment-terms"><strong>No Yearly Subscription</strong>Pay once—there is no annual renewal fee.</div>
           <p class="box-desc">An easy Android option featuring some, but not all, Arabic channels plus selected English channels.</p>
           <ul class="box-list">
             <li>Some, but not all, Arabic channels</li>
@@ -825,7 +832,8 @@
         <div class="box-body">
           <div class="box-os">Linux OS</div>
           <h3>World Box</h3>
-          <div class="box-price"><sup>$</sup>230 <small>first year</small></div>
+          <div class="box-price"><sup>$</sup>230 <small>First-Year Price</small></div>
+          <div class="payment-terms"><strong>$120 Per Year After Year One</strong>Yearly subscription renewal after the first year.</div>
           <p class="box-desc">The complete entertainment package for viewers who want live television and on-demand favorites from around the world.</p>
           <ul class="box-list">
             <li>Arabic and English channels</li>
@@ -842,7 +850,8 @@
         <div class="box-body">
           <div class="box-os">Android OS</div>
           <h3>Android Channel Box</h3>
-          <div class="box-price"><sup>$</sup>175 <small>first year</small></div>
+          <div class="box-price"><sup>$</sup>175 <small>First-Year Price</small></div>
+          <div class="payment-terms"><strong>$120 Per Year After Year One</strong>Yearly subscription renewal after the first year.</div>
           <p class="box-desc">A value-priced Android option with the broad live-channel system in a familiar, flexible interface.</p>
           <ul class="box-list">
             <li>Arabic and English channels</li>
